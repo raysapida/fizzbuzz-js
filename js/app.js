@@ -1,13 +1,20 @@
 $(document).ready(function() {
-  for(i=1; i < 101; i++){
-    if ( (i % 3 == 0) && (i % 5 == 0)){
-      $('ol').append('<li>FizzBuzz</li>');
-    } else if ( i % 3 == 0) {
-      $('ol').append('<li>Fizz</li>');
-    } else if ( i % 5 == 0) {
-      $('ol').append('<li>Buzz</li>');
-    } else {
-      $('ol').append('<li>'+i+'</li>');
+  $( "#item" ).submit(function( event ) {
+    var x = $("input").val();
+
+    for(i=1; i < x; i++){
+      if ( (i % 3 == 0) && (i % 5 == 0)){
+        $('body').append('<p>FizzBuzz</p>');
+      } else if ( i % 3 == 0) {
+        $('body').append('<p>Fizz</p>');
+      } else if ( i % 5 == 0) {
+        $('body').append('<p>Buzz</p>');
+      } else {
+        $('body').append('<p>'+i+'</p>');
+      };
     };
-  };
+
+    event.preventDefault();
+  });
+
 });
